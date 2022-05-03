@@ -11,9 +11,14 @@
 
 (function () {
     'use strict';
+    console.clear();
 
     //wait for web load
     setTimeout(() => {
+        //start timer
+        let startTime = window.performance.now();
+
+
         let game = document.getElementById("game").contentWindow.document;
 
         //get us to the game
@@ -44,7 +49,7 @@
                     answer = numberOne / numberTwo;
                     break;
                 default:
-                    console.log('unknown math! ' + textQuestion);
+                    console.log(`unknown question! ${textQuestion}`);
                     break;
             }
 
@@ -57,5 +62,9 @@
             //press enter
             game.getElementById("enter").click();
         }
-    }, 150);
+
+        //end timer
+        let endTime = window.performance.now();
+        console.log(`Test time: ${endTime - startTime} ms`);
+    }, 100);
 })();
