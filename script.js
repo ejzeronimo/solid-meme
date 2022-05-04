@@ -66,5 +66,8 @@
         //end timer
         let endTime = window.performance.now();
         console.log(`Test time: ${endTime - startTime} ms`);
+
+        //fill out our name
+        game.getElementById('floatingName').children[0].setAttribute('value', 'riggyz505');
     }, 100);
 })();
